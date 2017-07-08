@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= titulo %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1><%= titulo %></h1>
+          <form action="/crud/editar" method="POST">
+            <input type="hidden" name="id" value="<%= asistente.id %>">
+            <div class="from-group">
+              <label for="">Nombre</label>
+              <input type="text" name="nombre" value="<%= asistente.nombre %>" class="form-control">
+            </div>
+            <div class="from-group">
+              <label for="">Apellido</label>
+              <input type="text" name="apellido" value="<%= asistente.apellido %>" class="form-control">
+            </div>
+            <div class="from-group">
+              <label for="">Ocupacion</label>
+              <input type="text" name="ocupacion" value="<%= asistente.ocupacion %>" class="form-control">
+            </div>
+            <br />
+            <input type="submit" class="btn btn-primary" value="Guardar">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

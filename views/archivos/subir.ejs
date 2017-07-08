@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= titulo %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1><%= titulo %></h1>
+                <form action="/archivos/cargar" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="">Archivo</label>
+                        <input type="file" name="miarchivo">
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+                <% if(typeof cargado == 'boolean' && cargado) { %>
+                    <div style="padding: 20px 20px;" class="bg-success">
+                        Archivo Cargado Satisfactoriamente
+                        <a href="/archivos/<%= nombre_de_archivo %>">Ver</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
